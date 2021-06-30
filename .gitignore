@@ -18,3 +18,4 @@ git_script
 git_script.ps1
 git_token.txt
 *.ipynb
+*.svg
