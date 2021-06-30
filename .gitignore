@@ -1,0 +1,16 @@
+files
+files_test
+tmp
+proposal
+*.csv
+*.pdf
+*.xlsx
+*.gz
+*.log
+*.aux
+*.pb
+*.png
+*.qgs
+*.json
+*.lst
+git_token.txt
