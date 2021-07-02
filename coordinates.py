@@ -1,4 +1,5 @@
-# Copyright Ewan Short. All rights reserved.
+# Copyright (c) 2021 Ewan Short
+# This code is part of the pymscrape project
 import numpy as np
 import tkinter as tk
 import matplotlib.pyplot as plt

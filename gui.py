@@ -1,4 +1,5 @@
-# Copyright Ewan Short. All rights reserved.
+# Copyright (c) 2021 Ewan Short
+# This code is part of the pymscrape project
 import copy
 import tkinter as tk
 from tkinter import ttk
@@ -6,7 +7,6 @@ from PIL import Image, ImageTk
 import numpy as np
 import cv2 as cv
 import random
-import os
 
 
 # Base tkinter scroll/zoom class based on
@@ -490,7 +490,7 @@ class Name_Polygons(Zoom_Scroll):
                     text_x = com_x_plot
                     text_x += 5 * np.cos(self.names_offset[i]) * self.imscale
                     text_y = com_y_plot
-                    text_y += 5 * np.sin(self.names_offset[i]) * self.imscale,
+                    text_y += 5 * np.sin(self.names_offset[i]) * self.imscale
                     self.names_r[i] = self.canvas.create_text(
                         text_x, text_y, anchor='w', text=self.names[i],
                         fill=fill, font=font)

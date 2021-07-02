@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Ewan Short
+# This code is part of the pymscrape project
 import re
 import numpy as np
 from scipy.spatial.distance import cdist
@@ -18,7 +20,7 @@ from matplotlib.colors import to_rgb
 import simplekml
 
 import gui
-from shell_tools import run_common_cmd, run_powershell_cmd
+from shell_tools import run_common_cmd
 
 
 def hex_to_kml_hex(hex_col, with_hash=True, alpha='ff'):
@@ -582,7 +584,9 @@ def scrape_svg(
             cmd = 'qgis --project ' + dir + '/reference.qgs '
         cmd += dir + '/' + str(page_num) + '/svg.kml --extent {},{},{},{}'
         cmd = cmd.format(np.min(LON), np.min(LAT), np.max(LON), np.max(LAT))
-        subprocess.run(cmd, shell=True)
+        subprocess.run(
+            cmd, shell=True, stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL)
 
     return leg_text_all_corrected + cp_names, im_leg, pb_tl, pb_br
 

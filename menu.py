@@ -1,4 +1,5 @@
-# Copyright Ewan Short. All rights reserved.
+# Copyright (c) 2021 Ewan Short
+# This code is part of the pymscrape project
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog, simpledialog
@@ -227,7 +228,7 @@ class Menu(ttk.Frame):
         return
 
     def check_saved_pages(self, event=None):
-        self.id_num = self.file_path.split('/')[-2]
+        self.id_num = self.file_path.split('/')[-1].split('.')[-2]
         self.sub_dir = '/map_data/' + self.id_num
         self.dir = self.base_dir + self.sub_dir
 
@@ -259,8 +260,9 @@ class Menu(ttk.Frame):
         self.search_terms = [
             t.strip() for t in self.search_terms if t != '' and t != ' ']
 
-        run_common_cmd('mkdir ' + self.dir, self.base_dir)
-        run_common_cmd('mkdir ' + self.dir + '/pages', self.base_dir)
+        # import pdb; pdb.set_trace()
+        run_common_cmd('mkdir -p ' + self.dir, self.base_dir)
+        run_common_cmd('mkdir -p ' + self.dir + '/pages', self.base_dir)
         # try:
         # Can seperate this as a function
         self.saved_pages = []
@@ -324,7 +326,7 @@ class Menu(ttk.Frame):
         self.linenumber += 1
 
         run_common_cmd(
-            'mkdir ' + self.dir + '/' + str(self.page_num), self.base_dir)
+            'mkdir -p ' + self.dir + '/' + str(self.page_num), self.base_dir)
         file_name = 'page-' + str(self.page_num) + '.png'
         self.im1 = imread(self.dir + '/pages/' + file_name)
 
@@ -464,7 +466,9 @@ class Menu(ttk.Frame):
                         approx_lat+np.sign(approx_lat)*approx_spread,
                         approx_lon+approx_spread,
                         approx_lat-np.sign(approx_lat)*approx_spread)
-                    subprocess.run(cmd, shell=True)
+                    subprocess.run(
+                        cmd, shell=True, stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL)
 
                     cmd = 'move-item -path {}/JSON/raw/*json '.format(self.dir)
                     cmd += '-destination {}/JSON/edited/'.format(self.dir)
@@ -483,7 +487,9 @@ class Menu(ttk.Frame):
 
                     subprocess.run(
                         'mv ' + self.dir + '/JSON/raw/*json '
-                        + self.dir + '/JSON/edited/', shell=True)
+                        + self.dir + '/JSON/edited/', shell=True,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL)
 
             coords = []
             for i in range(len(points)):

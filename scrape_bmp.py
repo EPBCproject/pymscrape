@@ -1,4 +1,5 @@
-# Copyright Ewan Short. All rights reserved.
+# Copyright (c) 2021 Ewan Short
+# This code is part of the pymscrape project
 import gui
 from scrape_svg import convert_transform, gen_poly_coords
 from shell_tools import run_common_cmd
@@ -206,4 +207,5 @@ def scrape_bmp(
         cmd = 'qgis --project ' + dir + '/reference.qgs '
     cmd += dir + '/' + str(page_num) + '/image.kml --extent {},{},{},{}'
     cmd = cmd.format(np.min(LON), np.min(LAT), np.max(LON), np.max(LAT))
-    subprocess.run(cmd, shell=True)
+    subprocess.run(
+        cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

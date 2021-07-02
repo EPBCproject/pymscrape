@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <name>195_svg</name>
+        <Folder id="23">
+            <Style id="14">
+                <LineStyle id="15">
+                    <color>ff0000a8</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="16">
+                    <color>800000a8</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <Style id="17">
+                <LineStyle id="18">
+                    <color>ff0000a8</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="19">
+                    <color>800000a8</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>Remnant RE Vegetation in Disturbance</name>
+            <Placemark id="25">
+                <name>Remnant RE Vegetation in Disturbance 1</name>
+                <styleUrl>#14</styleUrl>
+                <Polygon id="24">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="26">
+                            <coordinates>150.001679,-30.009253,1.0 150.001469,-30.010285,1.0 150.001402,-30.011317,1.0 150.001209,-30.011317,1.0 150.001243,-30.010759,1.0 150.001268,-30.010404,1.0 150.001276,-30.010237,1.0 150.001495,-30.009123,1.0 150.00152,-30.009016,1.0 150.001679,-30.009253,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+            <Placemark id="29">
+                <name>Remnant RE Vegetation in Disturbance 2</name>
+                <styleUrl>#17</styleUrl>
+                <Polygon id="28">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="30">
+                            <coordinates>150.002603,-30.006572,1.0 150.002612,-30.006596,1.0 150.00262,-30.006584,1.0 150.00278,-30.006762,1.0 150.002041,-30.00815,1.0 150.001957,-30.008375,1.0 150.001831,-30.008114,1.0 150.001889,-30.007972,1.0 150.001906,-30.007936,1.0 150.002007,-30.007735,1.0 150.002041,-30.007687,1.0 150.002217,-30.007343,1.0 150.002225,-30.007331,1.0 150.002293,-30.007201,1.0 150.002385,-30.007035,1.0 150.00241,-30.006987,1.0 150.002377,-30.006964,1.0 150.002603,-30.006572,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder id="32">
+            <Style id="8">
+                <LineStyle id="9">
+                    <color>ffff7000</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="10">
+                    <color>80ff7000</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <Style id="11">
+                <LineStyle id="12">
+                    <color>ffff7000</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="13">
+                    <color>80ff7000</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>Watercourse (Stream Order)</name>
+            <Placemark id="34">
+                <name>Watercourse (Stream Order) 1</name>
+                <styleUrl>#8</styleUrl>
+                <Polygon id="33">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="35">
+                            <coordinates>150.001042,-30.004402,1.0 150.001042,-30.00439,1.0 150.00147,-30.003607,1.0 150.00147,-30.003595,1.0 150.001882,-30.003049,1.0 150.001949,-30.002397,1.0 150.001949,-30.002385,1.0 150.002033,-30.002124,1.0 150.002663,-30.001318,1.0 150.002764,-30.001033,1.0 150.002814,-30.000677,1.0 150.002798,-30.000309,1.0 150.002798,-30.000298,1.0 150.002798,-30.000286,1.0 150.002806,-30.000286,1.0 150.002806,-30.000298,1.0 150.002814,-30.000298,1.0 150.002814,-30.000321,1.0 150.002831,-30.000677,1.0 150.002831,-30.000689,1.0 150.002781,-30.001045,1.0 150.00268,-30.00133,1.0 150.00205,-30.002136,1.0 150.001966,-30.002397,1.0 150.001899,-30.003061,1.0 150.001899,-30.003073,1.0 150.001479,-30.003619,1.0 150.001051,-30.004402,1.0 150.001042,-30.004402,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+            <Placemark id="38">
+                <name>Watercourse (Stream Order) 2</name>
+                <styleUrl>#11</styleUrl>
+                <Polygon id="37">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="39">
+                            <coordinates>150.003822,-30.001163,1.0 150.003964,-30.001187,1.0 150.004199,-30.001116,1.0 150.004468,-30.001258,1.0 150.004476,-30.001258,1.0 150.004669,-30.001472,1.0 150.004669,-30.001484,1.0 150.004678,-30.001484,1.0 150.004678,-30.001496,1.0 150.004669,-30.001496,1.0 150.004661,-30.001496,1.0 150.004468,-30.001282,1.0 150.004199,-30.00114,1.0 150.003973,-30.001211,1.0 150.003964,-30.001211,1.0 150.003822,-30.001187,1.0 150.003813,-30.001187,1.0 150.003435,-30.000784,1.0 150.002999,-30.000523,1.0 150.002814,-30.000321,1.0 150.002798,-30.000309,1.0 150.002798,-30.000298,1.0 150.002798,-30.000286,1.0 150.002806,-30.000286,1.0 150.002806,-30.000298,1.0 150.003007,-30.000511,1.0 150.003444,-30.00076,1.0 150.003822,-30.001163,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder id="41">
+            <Style id="20">
+                <LineStyle id="21">
+                    <color>ff0000a8</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="22">
+                    <color>800000a8</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>EIS Disturbance Footprint</name>
+            <Placemark id="43">
+                <name>EIS Disturbance Footprint 1</name>
+                <styleUrl>#20</styleUrl>
+                <Polygon id="42">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="44">
+                            <coordinates>150.002998,-30.006549,1.0 150.002989,-30.006584,1.0 150.002847,-30.006513,1.0 150.002721,-30.006382,1.0 150.002738,-30.006347,1.0 150.002864,-30.006477,1.0 150.002998,-30.006549,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder id="46">
+            <Style id="2">
+                <LineStyle id="3">
+                    <color>ff00e64c</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="4">
+                    <color>8000e64c</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <Style id="5">
+                <LineStyle id="6">
+                    <color>ff00e64c</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="7">
+                    <color>8000e64c</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>MSES Essential Habitat</name>
+            <Placemark id="48">
+                <name>MSES Essential Habitat 1</name>
+                <styleUrl>#2</styleUrl>
+                <Polygon id="47">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="49">
+                            <coordinates>150.002611,-30.009585,1.0 150.002569,-30.009514,1.0 150.002334,-30.009111,1.0 150.002049,-30.008589,1.0 150.001831,-30.008114,1.0 150.001889,-30.007972,1.0 150.001915,-30.007901,1.0 150.001931,-30.007865,1.0 150.001948,-30.00783,1.0 150.002041,-30.007687,1.0 150.002217,-30.007343,1.0 150.002377,-30.006976,1.0 150.002838,-30.006181,1.0 150.002855,-30.006145,1.0 150.002931,-30.006027,1.0 150.003057,-30.005837,1.0 150.003074,-30.005766,1.0 150.003074,-30.005754,1.0 150.003082,-30.005754,1.0 150.00309,-30.005766,1.0 150.003116,-30.005896,1.0 150.003141,-30.006015,1.0 150.003099,-30.006086,1.0 150.003149,-30.006394,1.0 150.003157,-30.006477,1.0 150.003191,-30.006489,1.0 150.003241,-30.006489,1.0 150.003267,-30.00662,1.0 150.003308,-30.006786,1.0 150.003283,-30.006809,1.0 150.003107,-30.006869,1.0 150.003057,-30.006881,1.0 150.003006,-30.007367,1.0 150.002981,-30.007557,1.0 150.002981,-30.007592,1.0 150.002973,-30.007604,1.0 150.002922,-30.00764,1.0 150.00283,-30.007711,1.0 150.002779,-30.008162,1.0 150.002704,-30.008802,1.0 150.002636,-30.009372,1.0 150.002611,-30.009585,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+            <Placemark id="52">
+                <name>MSES Essential Habitat 2</name>
+                <styleUrl>#5</styleUrl>
+                <Polygon id="51">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="53">
+                            <coordinates>150.002611,-30.009585,1.0 150.002544,-30.010166,1.0 150.002494,-30.010131,1.0 150.0022,-30.009858,1.0 150.001872,-30.009526,1.0 150.00152,-30.009016,1.0 150.001537,-30.008945,1.0 150.001721,-30.008387,1.0 150.001814,-30.008162,1.0 150.001831,-30.008114,1.0 150.002049,-30.008589,1.0 150.002334,-30.009111,1.0 150.002569,-30.009514,1.0 150.002611,-30.009585,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder id="61">
+            <Style id="55">
+                <LineStyle id="56">
+                    <color>bf1c1ae4</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="57">
+                    <color>bf1615b6</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>Cat A or B</name>
+            <Placemark id="63">
+                <name>Cat A or B 1</name>
+                <styleUrl>#55</styleUrl>
+                <Polygon id="62">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="64">
+                            <coordinates>150.002789,-30.000345,1.0 150.002747,-30.000487,1.0 150.002562,-30.001353,1.0 150.002084,-30.002338,1.0 150.001832,-30.003085,1.0 150.001428,-30.003939,1.0 150.001227,-30.00503,1.0 150.001344,-30.005908,1.0 150.001386,-30.006205,1.0 150.001453,-30.006715,1.0 150.001562,-30.007521,1.0 150.001612,-30.007616,1.0 150.001612,-30.007628,1.0 150.001503,-30.007936,1.0 150.001394,-30.008245,1.0 150.001318,-30.008458,1.0 150.00131,-30.008411,1.0 150.001109,-30.007664,1.0 150.000866,-30.006276,1.0 150.000773,-30.00573,1.0 150.000631,-30.0042,1.0 150.001353,-30.001946,1.0 150.001832,-30.000345,1.0 150.002789,-30.000345,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+        <Folder id="66">
+            <Style id="58">
+                <LineStyle id="59">
+                    <color>bf007fff</color>
+                    <colorMode>normal</colorMode>
+                    <width>2</width>
+                </LineStyle>
+                <PolyStyle id="60">
+                    <color>bf0066cc</color>
+                    <colorMode>normal</colorMode>
+                    <fill>1</fill>
+                    <outline>1</outline>
+                </PolyStyle>
+            </Style>
+            <name>MSES Essential Habitat</name>
+            <Placemark id="68">
+                <name>MSES Essential Habitat 1</name>
+                <styleUrl>#58</styleUrl>
+                <Polygon id="67">
+                    <altitudeMode>relativetoground</altitudeMode>
+                    <outerBoundaryIs>
+                        <LinearRing id="69">
+                            <coordinates>150.006861,-30.000428,1.0 150.006794,-30.000487,1.0 150.006273,-30.000914,1.0 150.006231,-30.00095,1.0 150.005752,-30.001318,1.0 150.005744,-30.001318,1.0 150.005492,-30.001567,1.0 150.005291,-30.001745,1.0 150.005165,-30.001875,1.0 150.005047,-30.002017,1.0 150.004787,-30.002326,1.0 150.004594,-30.002539,1.0 150.004577,-30.002551,1.0 150.004266,-30.00299,1.0 150.004149,-30.003192,1.0 150.004039,-30.003382,1.0 150.003536,-30.004295,1.0 150.003132,-30.005007,1.0 150.00299,-30.005256,1.0 150.002847,-30.005505,1.0 150.002713,-30.00573,1.0 150.002251,-30.006501,1.0 150.002133,-30.006691,1.0 150.001957,-30.006987,1.0 150.001663,-30.007509,1.0 150.001646,-30.007557,1.0 150.001612,-30.007628,1.0 150.001612,-30.007616,1.0 150.001562,-30.007521,1.0 150.001453,-30.006715,1.0 150.001386,-30.006205,1.0 150.001344,-30.005908,1.0 150.001227,-30.00503,1.0 150.001428,-30.003939,1.0 150.001832,-30.003085,1.0 150.002084,-30.002338,1.0 150.002562,-30.001353,1.0 150.002747,-30.000487,1.0 150.002789,-30.000345,1.0 150.006861,-30.000345,1.0 150.006861,-30.000428,1.0</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
