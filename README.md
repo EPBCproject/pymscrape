@@ -23,9 +23,7 @@ using a random forest classifier.
 1. Forthcoming.
 
 # Docker Setup
-`pymscape` may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your 
-system. Note that the running the `EPBC_scrape` code through Docker is currently only supported for
-UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
+`pymscape` may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your system. Note that the running `pymscrape` through Docker is currently only supported for UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
 is possible to also run these containers from Docker on Windows using WSL2,
 but this is not yet working.)
 
@@ -33,15 +31,15 @@ If not using Docker, skip to the Normal Setup section below.
 
 ## Installation
 1. Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
-2. Download or clone the `EPBC_scrape` repository.
+2. Download or clone the `pymscrape` repository.
 3. Open the terminal and navigate to the repository directory  by typing
 
     ```
-    cd <parent_dir>/EPBC_scrape
+    cd <parent_dir>/pymscrape
     ```
 
     where `<parent_dir>` is the full path to the directory containing the
-    `EPBC_scrape` folder.
+    `pymscrape` folder.
 4. Type the following command into the terminal to build the Docker
 image.
 
@@ -208,32 +206,6 @@ Note versions of chrome and chromedriver must match.
 
 
 # Windows Installation Notes
-
-Install miniconda (https://docs.conda.io/en/latest/miniconda.html) or Anaconda (https://www.anaconda.com/products/individual-b).
-
-Open Anaconda/miniconda Windows powershell from the start menu.
-
-```
-conda create -n acf
-conda activate acf
-conda install pip
-conda install jupyter
-conda install -c conda-forge jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
-conda install matplotlib, numpy, pandas, selenium, bs4, rapidfuzz
-```
-
-Create a folder called bin in C:
-Download chrome
-Open chrome, go to settings, and disable the “ask permission for download” option.
-Go to settings, privacy and security, additional permissions, disable “ask for permission etc”.
-Download chromedriver (https://chromedriver.chromium.org/downloads), extract, and save the resulting file to C:/bin.
-Go to advanced settings in control panel, and add C:/bin to your path variable. Can also find this settings window by searching env in start seach bar.
-
-Download ghostscript 64 bit for windows (https://www.ghostscript.com/download/gsdnld.html).
-Install ghostscript.
-Add the location of gswin64c.exe to the `PATH` environment variable. Default installation location is `C:\Program Files\gs\gs9.54.0\bin`.
-
 Now for pymscrape.
 `conda install pypdf2, pillow, opencv, scikit-learn, scikit-image, colormath`
 For the last package we need to call pip from our conda environment
