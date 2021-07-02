@@ -1,0 +1,9 @@
+files
+Dockerfile
+.git
+git_script
+git_script.ps1
+*.ipynb
+map_data
+__pycache__
+*.pdf
