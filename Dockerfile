@@ -26,7 +26,7 @@ ARG USER_ID
 ARG GROUP_ID
 RUN groupadd -r -g $GROUP_ID pymscrape
 RUN useradd --no-log-init -r -g pymscrape -u $USER_ID pymscrape
-USER pymscrape
+# USER pymscrape
 
 # Code to run when container initialised
 ENTRYPOINT ["/pymscrape_src/entrypoint.sh"]

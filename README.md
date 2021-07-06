@@ -31,8 +31,8 @@ If not using Docker, skip to the Normal Setup section below.
 
 ## Installation
 1. Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
-2. Download or clone the `pymscrape` repository.
-3. Open the terminal and navigate to the repository directory  by typing
+1. Download or clone the `pymscrape` repository.
+1. Open the terminal and navigate to the repository directory  by typing
 
     ```
     cd <parent_dir>/pymscrape
@@ -40,7 +40,7 @@ If not using Docker, skip to the Normal Setup section below.
 
     where `<parent_dir>` is the full path to the directory containing the
     `pymscrape` folder.
-4. Type the following command into the terminal to build the Docker
+1. Type the following command into the terminal to build the Docker
 image.
 
     ```
@@ -51,16 +51,34 @@ image.
     ID numbers for the user created in the UNIX container. This ensures any new files created by `pymscrape` are owned by the host user. Note that these ID numbers can can be changed to those of other users or groups if required.
     1. By default, `pymscrape` will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access
     to the host user.
-5. Perform a test run of the software by calling
+1. WARNING! Configuring GUI apps to run on docker is complex and highly system dependent. If running on a UNIX system with X11 (like Ubuntu), you can perform the following proof of concept test, but this comes with security risks. First allow access to your display by opening the terminal and typing
 
     ```
-    docker run -it --rm --mount "type=bind,src=<files_dir>,dst=/pymscrape_data" pymscrape:1.0
+    xhost local:root
     ```
 
-    replacing `<files_dir>` with the full path to the location you wish to download the EPBC Website data to. This should download the first page of the EPBC website to the directory specified by `<files_dir>`.
+    Run the pymscrape Docker container with
+
+    ```
+    docker run -it --rm \
+    --mount "type=bind,src=/home/student.unimelb.edu.au/shorte1/Documents/pymscrape,dst=/pymscrape_data" \
+    -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix pymscrape:1.0
+    ```
+
+    The pymscrape main menu window should appear. Once you have finished testing,
+    close the pymscrape window. The container should stop. You should then run
+
+    ```
+    xhost -local:root
+    ```
+
+    to revoke access to your display. BE WARNED that other systems may be
+    able to access your display during the time between running the two `xhost`
+    commands. There are much [better ways](https://medium.com/dot-debug/running-chrome-in-a-docker-container-a55e7f4da4a8)
+    to run GUI apps through Docker, but which method you choose will depend highly on your system.  
 
 ## Operation
-1. Ensure you have completed the installation steps above.
+1. Forthcoming. See above instructions on performing a test run.
 
 # Normal Setup
 `pymscrape` can also be run without Docker, but additional dependencies must be
@@ -112,3 +130,9 @@ older versions of Windows.)
     ```
 
     This tells the shell to use the python configuration defined above.
+1. Run the following command in the terminal or Anaconda Powershell Prompt to launch the
+pymscrape main menu.
+
+    ```
+    python <base_dir>/pymscrape_script.py
+    ``` 
