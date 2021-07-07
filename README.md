@@ -23,7 +23,7 @@ using a random forest classifier.
 1. Forthcoming.
 
 # Docker Setup
-pymscrape may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your system. Note that the running pymscrape through Docker is currently only supported for UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
+pymscrape may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your system. Note that running pymscrape through Docker is currently only supported for UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
 is possible to also run these containers from Docker on Windows using WSL2,
 but this is not yet working.)
 
