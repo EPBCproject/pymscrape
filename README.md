@@ -23,7 +23,7 @@ using a random forest classifier.
 1. Forthcoming.
 
 # Docker Setup
-`pymscape` may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your system. Note that the running `pymscrape` through Docker is currently only supported for UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
+pymscrape may be run through [Docker](https://www.docker.com/). Docker is a convenient tool for isolating the configuration needed to run a piece of software from the rest of your system. Note that the running pymscrape through Docker is currently only supported for UNIX systems, as the Docker containers are themselves UNIX based. (In principle it
 is possible to also run these containers from Docker on Windows using WSL2,
 but this is not yet working.)
 
@@ -31,7 +31,7 @@ If not using Docker, skip to the Normal Setup section below.
 
 ## Installation
 1. Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
-1. Download or clone the `pymscrape` repository.
+1. Download or clone the pymscrape repository.
 1. Open the terminal and navigate to the repository directory  by typing
 
     ```
@@ -39,7 +39,7 @@ If not using Docker, skip to the Normal Setup section below.
     ```
 
     where `<parent_dir>` is the full path to the directory containing the
-    `pymscrape` folder.
+    pymscrape folder.
 1. Type the following command into the terminal to build the Docker
 image.
 
@@ -47,9 +47,9 @@ image.
     docker build -t pymscrape:1.0 --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) .
     ```
 
-    1. Note that `$(id -u)` and `$(id -g)` tell `pymscrape` to use the host user's
-    ID numbers for the user created in the UNIX container. This ensures any new files created by `pymscrape` are owned by the host user. Note that these ID numbers can can be changed to those of other users or groups if required.
-    1. By default, `pymscrape` will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access
+    1. Note that `$(id -u)` and `$(id -g)` tell pymscrape to use the host user's
+    ID numbers for the user created in the UNIX container. This ensures any new files created by pymscrape are owned by the host user. Note that these ID numbers can can be changed to those of other users or groups if required.
+    1. By default, pymscrape will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access
     to the host user.
 1. WARNING! Configuring GUI apps to run on docker is complex and highly system dependent. If running on a UNIX system with X11 (like Ubuntu), you can perform the following proof of concept test, but this comes with security risks. First allow access to your display by opening the terminal and typing
 
@@ -81,7 +81,7 @@ image.
 1. Forthcoming. See above instructions on performing a test run.
 
 # Normal Setup
-`pymscrape` can also be run without Docker, but additional dependencies must be
+pymscrape can also be run without Docker, but additional dependencies must be
 downloaded and installed.
 
 ## Supported Systems
@@ -92,7 +92,7 @@ older versions of Windows.)
 
 ## Installation
 1. Click the green "Code" button above, then "Download ZIP". (Advanced users should use GIT.)
-    1. Extract the ZIP file. You should end up with a folder called `pymscrape`.
+    1. Extract the ZIP file. You should end up with a folder called pymscrape.
     On windows, the recommended location for this directory is
     `C:\Users\<username>\Documents\pymscrape`, replacing `<username>` with your own Windows user name.  
 1. Download the [miniconda](https://docs.conda.io/en/latest/miniconda.html) installer.
@@ -100,7 +100,7 @@ older versions of Windows.)
     1. Run the installer. All the default installation settings are most likely fine.
     1. miniconda includes python itself, and makes it *much* easier to
   manage open source python packages.
-1. Open the terminal (UNIX) or the Anaconda Powershell Prompt (Windows 10) and navigate to the `pymscrape` directory by typing `cd <base_dir>`, where `<base_dir>` is the full path to the `pymscrape` folder. Then type
+1. Open the terminal (UNIX) or the Anaconda Powershell Prompt (Windows 10) and navigate to the pymscrape directory by typing `cd <base_dir>`, where `<base_dir>` is the full path to the pymscrape folder. Then type
 
     ```
     conda env create -f pymscrape.yml
@@ -108,7 +108,7 @@ older versions of Windows.)
     ```
 
     This will download other necessary python packages, and put them into an
-    conda environment called `pymscrape`. Environments make it possible to run
+    conda environment called pymscrape. Environments make it possible to run
     different versions of python with different combinations of packages on the same system.
     1. On Windows systems, one of the python packages `bezier` needs to be modified. Open the Powershell and type
 
@@ -135,4 +135,4 @@ pymscrape main menu.
 
     ```
     python <base_dir>/pymscrape_script.py
-    ``` 
+    ```
