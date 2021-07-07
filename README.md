@@ -51,7 +51,7 @@ image.
     ID numbers for the user created in the UNIX container. This ensures any new files created by pymscrape are owned by the host user. Note that these ID numbers can can be changed to those of other users or groups if required.
     1. By default, pymscrape will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access
     to the host user.
-1. WARNING! Configuring GUI apps to run on docker is complex and highly system dependent. If running on a UNIX system with X11 (like Ubuntu), you can perform the following proof of concept test, but this comes with security risks. First allow access to your display by opening the terminal and typing
+1. WARNING! Configuring GUI apps to run on docker is complex, highly system dependent, and may introduce security risks. If running on a UNIX system with X11 (like Ubuntu), you can perform the following proof of concept test, but this comes with SECURITY RISKS. First allow access to your display by opening the terminal and typing
 
     ```
     xhost local:root
