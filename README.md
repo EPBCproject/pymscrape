@@ -1,6 +1,6 @@
 Copyright Ewan Short. All rights reserved.<br>
 Concept of automated GIS data extraction for conservation applications by
-Kim Garratt, Annica Schoor and the Australian Conservation Foundation 2021.<br>
+Kim Garratt, Annica Schoo and the Australian Conservation Foundation 2021.<br>
 Software design and development by Ewan Short 2021. <br>
 <eshort0401@gmail.com>, <https://github.com/eshort0401> <br>
 
