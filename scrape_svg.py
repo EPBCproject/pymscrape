@@ -220,7 +220,7 @@ def scrape_svg(
 
     cp_match_ratios = []
     for cp in cp_shapes:
-        best_match = max([np.equal(cp,s).sum() for s in svg_shapes])/cp.size
+        best_match = max([np.equal(cp, s).sum() for s in svg_shapes])/cp.size
         cp_match_ratios.append(best_match)
 
     max_bad_pix = [tol*cp.sum() for cp in cp_shapes]
@@ -233,12 +233,10 @@ def scrape_svg(
 
     leg_paths = [
         p for p in paths if
-        (min_leg_path <= len(re.split('l|v|h|c',p['d'].lower())))
-        and
-        (
+        (min_leg_path <= len(re.split('l|v|h|c', p['d'].lower())))
+        and (
             (('stroke' in p.attrs.keys()) and (p['stroke'] != 'none'))
-            or
-            (('fill' in p.attrs.keys()) and (p['fill'] != 'none')))]
+            or (('fill' in p.attrs.keys()) and (p['fill'] != 'none')))]
 
     leg_coords, leg_stroke, leg_fill = convert_path_coords(
         leg_paths, im1.shape, thresh)
@@ -248,10 +246,10 @@ def scrape_svg(
         for i in range(len(leg_coords))]
 
     in_box = [
-        np.all(lb_tl[0]-2 <= c[:,0,0])
-        *np.all(c[:,0,0] <= lb_br[0]+2)
-        *np.all(lb_tl[1]-2 <= c[:,0,1])
-        *np.all(c[:,0,1] < lb_br[1]+2)
+        np.all(lb_tl[0]-2 <= c[:, 0, 0])
+        * np.all(c[:, 0, 0] <= lb_br[0]+2)
+        * np.all(lb_tl[1]-2 <= c[:, 0, 1])
+        * np.all(c[:, 0, 1] < lb_br[1]+2)
         for c in leg_coords]
 
     leg_max_area = 1e-2
@@ -262,9 +260,7 @@ def scrape_svg(
             cv.contourArea(
                 np.round(leg_coords_old[i]).astype(np.int32)
             ) < leg_max_area*p_area
-            and
-            in_box[i]
-            and closed[i]
+            and in_box[i] and closed[i]
         ] for obj in [leg_coords, leg_stroke, leg_fill]]
 
     svg_leg_text = soup.svg.find_all('tspan')

@@ -49,8 +49,7 @@ image.
 
     1. Note that `$(id -u)` and `$(id -g)` tell pymscrape to use the host user's
     ID numbers for the user created in the UNIX container. This ensures any new files created by pymscrape are owned by the host user. Note that these ID numbers can can be changed to those of other users or groups if required.
-    1. By default, pymscrape will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access
-    to the host user.
+    1. By default, pymscrape will give read, write and execute rights for any created files to everyone after the website data has been downloaded. These permissions can be changed by altering the `chmod ...` lines in `entrypoint.sh` to, for instance, only give write access to the host user.
 1. WARNING! Configuring GUI apps to run on docker is complex, highly system dependent, and may introduce security risks. If running on a UNIX system with X11 (like Ubuntu), you can perform the following proof of concept test, but this comes with SECURITY RISKS. First allow access to your display by opening the terminal and typing
 
     ```
@@ -61,7 +60,7 @@ image.
 
     ```
     docker run -it --rm \
-    --mount "type=bind,src=/home/student.unimelb.edu.au/shorte1/Documents/pymscrape,dst=/pymscrape_data" \
+    --mount "type=bind,src=<parent_dir>/pymscrape,dst=/pymscrape_data" \
     -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix pymscrape:1.0
     ```
 
@@ -77,8 +76,9 @@ image.
     commands. There are much [better ways](https://medium.com/dot-debug/running-chrome-in-a-docker-container-a55e7f4da4a8)
     to run GUI apps through Docker, but which method you choose will depend highly on your system.  
 
-## Operation
-1. Forthcoming. See above instructions on performing a test run.
+## Launching pymscrape
+1. See the above instructions on running the Docker container with an attached
+display, but note the security risks.
 
 # Normal Setup
 pymscrape can also be run without Docker, but additional dependencies must be
@@ -121,7 +121,7 @@ older versions of Windows.)
 1. Download and install [Inkscape v. 1.1](https://inkscape.org/release/inkscape-1.1/) for your system.
 1. Download and install [QGIS v. 2.18.17](https://www.qgis.org/en/site/forusers/alldownloads.html) for you system.
 
-# Operation
+## Launching pymscrape
 1. Open the terminal (UNIX) or Anaconda Powershell Prompt (Windows 10).
 1. Activate the conda environment by typing
 
@@ -130,9 +130,34 @@ older versions of Windows.)
     ```
 
     This tells the shell to use the python configuration defined above.
-1. Run the following command in the terminal or Anaconda Powershell Prompt to launch the
-pymscrape main menu.
+1. Run the following command in the terminal (UNIX) or Anaconda Powershell
+Prompt (Windows 10) to launch the pymscrape main menu,
 
     ```
-    python <base_dir>/pymscrape_script.py
+    python <base_dir>/pymscrape_script.py <save_dir>
     ```
+
+    where `<base_dir>` is the full path to the pymscrape folder, and
+    `<save_dir>` is the directory where you wish to save extracted KML files.
+    If `<save_dir>` is different from `<base_dir>`, you will need to copy the
+    `reference.qgs` file from `<base_dir>` to `<sub_dir>`. Note that
+    `<save_dir>` can be the same as `<base_dir>` if so desired.
+
+# Usage and Development Notes
+This section explains how pymscrape may be used in it's present form. It also provides
+references to the code to aid in future development and debugging. As described in the
+introduction, pymscrape works in 5 steps.
+## Identifing Map Pages in the PDF
+After launching pymscrape as per the instructions above, the main menu should appear.
+![pymscrape menu](README_images/menu.png "pymscrape Menu")
+
+large images, and optionally containing search terms like "legend" or "map".
+1. Allow the user to associate physical coordinates with map images by specifying
+the coordinates of a small number of distinct pixels (at least three), then performing
+simple linear interpolation.
+1. Extract SVG data from map images if present, and convert this to KML format using the coordinates
+obtained above.
+1. Remove the SVG layer, then create KML polygons for regions of interest within
+the remaining flat BMP map image. This is performed by allowing the user to select
+representative blocks for regions of interest, then performing image segmentation
+using a random forest classifier.
