@@ -143,11 +143,6 @@ Prompt (Windows 10) to launch the pymscrape main menu,
     `reference.qgs` file from `<base_dir>` to `<sub_dir>`. Note that
     `<save_dir>` can be the same as `<base_dir>` if so desired.
 
-# Development Notes
-The code for this menu can be found in `menu.py` and `gui.py`. This menu was built very quickly to provide proof of concept. It is missing many ease of use features, and also contains some bugs.
-
-After clicking OK, pymscrape will search the PDF document, and save BMP copies of the relevant pages in `<save_dir>/map_data/<file_name>/pages`
-
 # Usage Notes
 This section explains how pymscrape may be used in it's present form. After launching pymscrape as per the instructions above, the main menu should appear.
 
@@ -173,3 +168,25 @@ After clicking "OK", pymscrape will perform the search. This may take a minute o
 After clicking the "Choose Page" button, a window like that shown below should appear.
 
 ![Choose page window](gallery/choose_page.png "Choose page window")
+
+Click the page you wish to work on, then click "Done" or press Enter.
+
+## Get Map Coordinates
+After clicking the "Get Map Coordinates" button, a window like that shown above should appear.
+
+![Choose map template](gallery/choose_map_template.png "Choose map template")
+
+Here you can choose to either create a new set of latitude, longitude coordinates for the map on the page you choose above, or use the coordinates for a map you have already processed. Note it is very common for a PDF file to contain many different maps with different overlays and labels, but all based on the same underlying map image, and therefore having the same latitude, longitude coordinates. In pymscrape, this is referred to as a "map template".  
+
+If you choose to create a new map template from the current map, a window like that below should appear.
+
+![Create template](gallery/create_template.png "Create template")
+
+You can move the map image around by clicking and dragging, or using the scrollbars, and zoom in and out using the mousewheel. The essential idea here is is to choose some points of interest in the map that can be easily identified. This can be done by right clicking. Intersections between roads, river or coastline features, prominent buildings etc are all good choices. After right clicking, a dialogue should appear allowing you to give a label to this point, or to use an existing label if this identifying location was present in a previously processed map.
+
+![Labelled point](gallery/map_points.png "Map points")
+
+For any map depicting a region smaller than, say NSW, only 3 points should be identified. This will be almost all of the planning type maps you will see. For very large maps of entire states or countries, 7 or more points should be used. Once you've identified enough points, click "Done" or press Enter. The GIS application QGIS will then be launched.
+
+# Development Notes
+The code for the menu can be found in `menu.py` and `gui.py`. The menu and other GUI classes are built around the python package `tkinter`. The menu was built very quickly to provide a proof of concept. It is missing ease of use features. The menu flow logic is also imperfect, e.g. if a popup window is closed before completing the step associated with that window, errors may result (simply restart pymscrape if this happens.)
