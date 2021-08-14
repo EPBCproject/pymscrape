@@ -149,7 +149,7 @@ references to the code to aid in future development and debugging. As described 
 introduction, pymscrape works in 5 steps.
 ## Identifing Map Pages in the PDF
 After launching pymscrape as per the instructions above, the main menu should appear.
-![pymscrape menu](README_images/menu.png "pymscrape Menu")
+![pymscrape menu](gallery/menu.png "pymscrape Menu")
 
 large images, and optionally containing search terms like "legend" or "map".
 1. Allow the user to associate physical coordinates with map images by specifying
