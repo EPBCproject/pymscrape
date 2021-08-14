@@ -1,0 +1,25 @@
+name: pymscrape
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - bs4
+  - colormath
+  - geojson
+  - lxml
+  - matplotlib
+  - networkx
+  - numpy
+  - opencv
+  - pandas
+  - pillow
+  - pip
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - simplekml
+  - tk
+  - pip:
+    - pymupdf==1.18.16
+prefix: C:\Users\eshor\miniconda3\envs\pymscrape

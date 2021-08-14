@@ -100,24 +100,31 @@ older versions of Windows.)
     1. Run the installer. All the default installation settings are most likely fine.
     1. miniconda includes python itself, and makes it *much* easier to
   manage open source python packages.
-1. Open the terminal (UNIX) or the Anaconda Powershell Prompt (Windows 10) and navigate to the pymscrape directory by typing `cd <base_dir>`, where `<base_dir>` is the full path to the pymscrape folder. Then type
+1. Open the terminal (UNIX) or the Anaconda Powershell Prompt (Windows 10) and navigate to the pymscrape directory by typing `cd <base_dir>`, where `<base_dir>` is the full path to the pymscrape folder. If using UNIX, type
 
     ```
     conda env create -f pymscrape.yml
-    conda activate pymscrape
     ```
 
+    If using Windows 10, type
+    ```
+    conda env create -f pymscrape_windows.yml
+    ```
     This will download other necessary python packages, and put them into an
     conda environment called pymscrape. Environments make it possible to run
-    different versions of python with different combinations of packages on the same system.
-    1. On Windows systems, one of the python packages `bezier` needs to be modified. Open the Powershell and type
+    different versions of python with different combinations of packages on the same system. Activate your new pymscrape conda environment by typing
+
+    ```
+    conda activate pymscrape
+    ```
+    1. On Windows systems, the python package `bezier` needs to be installed manually. Open the Powershell and type
 
         ```
         $BEZIER_NO_EXTENSION=$true
-        python -m <path-to-miniconda>\miniconda3\envs\<environment name>\Scripts\pip3 install --upgrade bezier --no-binary=bezier
+        <path-to-miniconda>\miniconda3\envs\pymscrape\Scripts\pip3 install --upgrade bezier --no-binary=bezier
         ```
 
-        where `<path-to-miniconda>` is the full path to miniconda.
+        where `<path-to-miniconda>` is the full path to miniconda. It will usually be something like `C:\Users\<username>`, where `<username>` is your Windows 10 username.
 1. Download and install [Inkscape v. 1.1](https://inkscape.org/release/inkscape-1.1/) for your system.
 1. Download and install [QGIS v. 2.18.17](https://www.qgis.org/en/site/forusers/alldownloads.html) for you system.
 
@@ -140,7 +147,7 @@ Prompt (Windows 10) to launch the pymscrape main menu,
     where `<base_dir>` is the full path to the pymscrape folder, and
     `<save_dir>` is the directory where you wish to save extracted KML files.
     If `<save_dir>` is different from `<base_dir>`, you will need to copy the
-    `reference.qgs` file from `<base_dir>` to `<sub_dir>`. Note that
+    `reference.qgs` file from `<base_dir>` to `<save_dir>`. Note that
     `<save_dir>` can be the same as `<base_dir>` if so desired.
 
 # Usage Notes
