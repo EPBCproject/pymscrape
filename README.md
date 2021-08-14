@@ -143,13 +143,20 @@ Prompt (Windows 10) to launch the pymscrape main menu,
     `reference.qgs` file from `<base_dir>` to `<sub_dir>`. Note that
     `<save_dir>` can be the same as `<base_dir>` if so desired.
 
-# Usage and Development Notes
-This section explains how pymscrape may be used in it's present form. It also provides
-references to the code to aid in future development and debugging. As described in the
-introduction, pymscrape works in 5 steps.
-## Identifing Map Pages in the PDF
-After launching pymscrape as per the instructions above, the main menu should appear.
+# Development Notes
+
+# Usage Notes
+This section explains how pymscrape may be used in it's present form. It also provides references to the code to aid in future development and debugging. After launching pymscrape as per the instructions above, the main menu should appear.
 ![pymscrape menu](gallery/menu.png "pymscrape Menu")
+The code for this menu can be found in `menu.py` and `gui.py`. Note this menu was built very quickly to provide proof of concept, and contains some bugs. After clicking the "Choose File" button, a dialogue will appear allowing you to choose the PDF file you wish to work on. As described in the introduction, pymscrape then works in 5 steps.
+1. Identify the pages in the PDF document potentially containing maps.
+1. Associate latitude, longitude coordinates with each pixel of the map image.
+1. Extract the scalable vector graphic (SVG) data from the map if present. Convert this to keyhole markup language (KML) format using the coordinate system obtained above.
+1. Remove the SVG layer, then create KML polygons for regions of interest within the remaining flat BMP map image.
+
+
+## Identifing Map Pages in the PDF
+
 
 large images, and optionally containing search terms like "legend" or "map".
 1. Allow the user to associate physical coordinates with map images by specifying
