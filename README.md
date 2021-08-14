@@ -144,27 +144,32 @@ Prompt (Windows 10) to launch the pymscrape main menu,
     `<save_dir>` can be the same as `<base_dir>` if so desired.
 
 # Development Notes
+The code for this menu can be found in `menu.py` and `gui.py`. This menu was built very quickly to provide proof of concept. It is missing many ease of use features, and also contains some bugs.
+
+After clicking OK, pymscrape will search the PDF document, and save BMP copies of the relevant pages in `<save_dir>/map_data/<file_name>/pages`
 
 # Usage Notes
-This section explains how pymscrape may be used in it's present form. It also provides references to the code to aid in future development and debugging. After launching pymscrape as per the instructions above, the main menu should appear.
+This section explains how pymscrape may be used in it's present form. After launching pymscrape as per the instructions above, the main menu should appear.
+
 ![pymscrape menu](gallery/menu.png "pymscrape Menu")
-The code for this menu can be found in `menu.py` and `gui.py`. Note this menu was built very quickly to provide proof of concept, and contains some bugs. After clicking the "Choose File" button, a dialogue will appear allowing you to choose the PDF file you wish to work on. As described in the introduction, pymscrape then works in 5 steps.
+
+After clicking the "Choose File" button, a dialogue will appear allowing you to choose the PDF file you wish to work on. As described in the introduction, pymscrape then works in 5 steps.
 1. Identify the pages in the PDF document potentially containing maps.
+1. Choose the page you wish to work on.
 1. Associate latitude, longitude coordinates with each pixel of the map image.
 1. Extract the scalable vector graphic (SVG) data from the map if present. Convert this to keyhole markup language (KML) format using the coordinate system obtained above.
 1. Remove the SVG layer, then create KML polygons for regions of interest within the remaining flat BMP map image.
 
-
 ## Identifing Map Pages in the PDF
+After clicking the "Search for Maps" button, the small dialogue below should appear.
 
+![Search term dialogue](gallery/map_search_terms.png "Search Term Dialogue")
 
-large images, and optionally containing search terms like "legend" or "map".
-1. Allow the user to associate physical coordinates with map images by specifying
-the coordinates of a small number of distinct pixels (at least three), then performing
-simple linear interpolation.
-1. Extract SVG data from map images if present, and convert this to KML format using the coordinates
-obtained above.
-1. Remove the SVG layer, then create KML polygons for regions of interest within
-the remaining flat BMP map image. This is performed by allowing the user to select
-representative blocks for regions of interest, then performing image segmentation
-using a random forest classifier.
+If the text input field is left blank, pymscrape will find all pages containing large images, and record the page numbers as pages potentially containing maps. This can be refined by adding search terms like "legend" in the above dialogue. If you're only interested in specific maps, such as those about "offsets", you could use a further refined search string like "legend, offset". In these cases, a more efficient strategy would be to first filter the PDF files available to those containing text discussing offsets (see ref1).
+
+After clicking "OK", pymscrape will perform the search. This may take a minute or two for large PDFs.
+
+## Choose Page.
+After clicking the "Choose Page" button, a window like that shown below should appear.
+
+![Choose page window](gallery/choose_page.png "Choose page window")
