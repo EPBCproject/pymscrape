@@ -112,12 +112,17 @@ older versions of Windows.)
     ```
     This will download other necessary python packages, and put them into an
     conda environment called pymscrape. Environments make it possible to run
-    different versions of python with different combinations of packages on the same system. Activate your new pymscrape conda environment by typing
+    different versions of python with different combinations of packages on the same system. If the environment could not be created using the YML file given above, try instead
+    ```
+    conda env create -f pymscrape_unfrozen.yml
+    ```
+    This will allow conda to try to choose the best versions of each piece of python software for your system, rather than using the fixed versions specified in the other YML files.
 
+    Once created, activate your new pymscrape conda environment by typing
     ```
     conda activate pymscrape
     ```
-    1. On Windows systems, the python package `bezier` needs to be installed manually. Open the Powershell and type
+    1. On Windows systems, the python package `bezier` needs to be installed manually due to an [open issue](https://github.com/dhermes/bezier/issues/237) with bezier's prebuilt binaries on Windows 10. Open the Powershell and type
 
         ```
         $BEZIER_NO_EXTENSION=$true
@@ -193,7 +198,28 @@ You can move the map image around by clicking and dragging, or using the scrollb
 
 ![Labelled point](gallery/map_points.png "Map points")
 
-For any map depicting a region smaller than, say NSW, only 3 points should be identified. This will be almost all of the planning type maps you will see. For very large maps of entire states or countries, 7 or more points should be used. Once you've identified enough points, click "Done" or press Enter. The GIS application QGIS will then be launched.
+For any map depicting a region smaller than, say NSW, only 3 points should be identified. This will be almost all of the planning type maps you will see. For very large maps of entire states or countries, 7 or more points should be used. Once you've identified enough points, click "Done" or press Enter.
+
+A file called `reference.png` will then be created in the directory
+`<save_dir>/map_data/<file_name>/<page_number>` where `<save_dir>` is the file
+saving directory argument provided when pymscrape was run, `<file_name>` is
+the name of the file you are working on (with extension removed) and
+`<page_number>` is the page you are working on. The `reference.png` image will
+be useful later if you forget which points you identified above.
+
+You will then be prompted to enter the approximate latitude, longitude coordinates of the top left corner of the map, and the approximate longitudinal width of the map. These can be very rough estimates: they are just used to create a "first guess" as to the location of the points you have identified in the map image. The points will be positioned more precisely later. Google maps is a convenient way to find the approximate coordinates of the top left corner of the map. You can use street names or other information from the PDF document to find the location of the map in GOogle maps.     
+
+Once you've entered approximate coordinates, the GIS application QGIS will be launched. You should see something similar to the window below.
+
+![QGIS Points](gallery/QGIS_points_unedited.png "QGIS points")
+
+You may now use QGIS to move the points to their exact locations. Do this by clicking one of the points in the list to the bottom right to highlight it (consult the image below). Then click the pencil in the toolbar at the top of the window to enable "edit mode" for that point. In the same toolbar, click the icon with three dots and an arrow to enable "move feature". Then click and drag the point to move it to the right location. Once finished, click the "save layer edits" button to the right of the pencil icon (it should appear as a floppy disk with a little pencil on top.)
+
+![QGIS Points](gallery/QGIS_points_help.png "QGIS points")
+
+Repeat this for all the points. If you forget where a point is supposed to go, consult the `reference.png` image (see above). Once finished, close QGIS. When prompted to save, click yes. (Clicking yes here isn't actually important, the essential thing is that you clicked the "save layer edits" button when moving the points. See the development notes.)
+
+## Extract SVG Data
 
 # Development Notes
 The code for the menu can be found in `menu.py` and `gui.py`. The menu and other GUI classes are built around the python package `tkinter`. The menu was built very quickly to provide a proof of concept. It is missing ease of use features. The menu flow logic is also imperfect, e.g. if a popup window is closed before completing the step associated with that window, errors may result (simply restart pymscrape if this happens.)

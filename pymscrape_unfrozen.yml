@@ -21,5 +21,5 @@ dependencies:
   - simplekml
   - tk
   - pip:
-    - pymupdf==1.18.16
+    - pymupdf
 prefix: C:\Users\eshor\miniconda3\envs\pymscrape
