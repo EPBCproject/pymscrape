@@ -12,6 +12,7 @@ import json
 import geojson
 import glob
 import os
+import string
 
 import gui
 import coordinates
@@ -228,7 +229,11 @@ class Menu(ttk.Frame):
         return
 
     def check_saved_pages(self, event=None):
-        self.id_num = self.file_path.split('/')[-1].split('.')[-2]
+        id_num = self.file_path.split('/')[-1].split('.')[-2]
+        id_num = id_num.replace('-', '_')
+        id_num = id_num.translate(str.maketrans('', '', string.punctuation))
+        id_num = id_num.replace(' ', '_')
+        self.id_num = id_num
         self.sub_dir = '/map_data/' + self.id_num
         self.dir = self.base_dir + self.sub_dir
 

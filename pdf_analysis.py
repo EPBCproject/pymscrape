@@ -3,7 +3,7 @@
 import re
 
 
-def detect_map(page, re_pttns, im_ratio=0.6):
+def detect_map(page, re_pttns, im_ratio=0.4):
     page_area = page.MediaBox[2] * page.MediaBox[3]
     page_area = page_area / 72 / 72  # inches squared
     total_img_area = 0
