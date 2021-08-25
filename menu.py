@@ -55,7 +55,8 @@ class Menu(ttk.Frame):
             yscrollcommand=vbar.set)
         self.console.grid(row=10, column=0, columnspan=4, sticky='w')
         self.linenumber = 1
-        self.console.insert(self.linenumber, 'Welcome to mscrape version 0.1.')
+        self.console.insert(
+            self.linenumber, 'Welcome to pymscrape version 0.1.')
         self.linenumber += 1
 
         [
@@ -229,8 +230,9 @@ class Menu(ttk.Frame):
         return
 
     def check_saved_pages(self, event=None):
-        id_num = self.file_path.split('/')[-1].split('.')[-2]
-        id_num = id_num.replace('-', '_')
+        id_num = self.file_path.split('/')[-1].split('.')[:-2]
+        id_num = ''.join(id_num)
+        id_num = id_num.replace('-', ' ')
         id_num = id_num.translate(str.maketrans('', '', string.punctuation))
         id_num = id_num.replace(' ', '_')
         self.id_num = id_num
