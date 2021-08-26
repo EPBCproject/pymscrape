@@ -230,7 +230,6 @@ class Menu(ttk.Frame):
         return
 
     def check_saved_pages(self, event=None):
-        import pdb; pdb.set_trace()
         id_num = self.file_path.split('/')[-1].split('.')[:-1]
         id_num = ''.join(id_num)
         id_num = id_num.replace('-', ' ').replace('_', ' ')
