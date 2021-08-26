@@ -81,8 +81,7 @@ image.
 display, but note the security risks.
 
 # Normal Setup
-pymscrape can also be run without Docker, but additional dependencies must be
-downloaded and installed.
+pymscrape can also be run without Docker, but additional dependencies must be downloaded and installed. (This is fiddly on Windows 10, please call Ewan on 0435044853 for support!)
 
 ## Supported Systems
 - Unix systems (i.e. Linux and Mac).
@@ -132,11 +131,21 @@ older versions of Windows.)
         where `<path-to-miniconda>` is the full path to miniconda. It will usually be something like `C:\Users\<username>`, where `<username>` is your Windows 10 username.
 1. Download and install [Inkscape v. 1.1](https://inkscape.org/release/inkscape-1.1/) for your system.
 1. Download and install [QGIS v. 2.18.17](https://www.qgis.org/en/site/forusers/alldownloads.html) for your system.
-1. Depending on your system, you may also need to add the Inkscape and QGIS executables
-to you path environment. 
-    1. On Windows 10, this can be accomplished by typing "environment"
-    into the Windows search bar, then clicking the "Edit the system environment variables"
-    result that appears.
+1. Depending on your system and installation method, you may also need to manually add the Inkscape and QGIS executables
+to the `PATH` environment variable. This allows pymscrape to find and launch these programs.
+    1. On Windows 10, this can be accomplished by typing "environment" into the Windows search bar, then clicking the "Edit the system environment variables" result that appears.
+        1. In the "System Properties" window that appears, click the "Environment Variables" button in the bottom right.
+        1. In the "System variables" section, highlight "Path" and press "Edit".
+        1. In the "Edit environment variable" popup that appears click the "New" button. Add the paths to the Inkscape executable. With a default installation on Windows 10 this will be something like
+        ```
+        C:\Program Files\Inkscape\bin
+        ```
+
+        1. Repeat for the QGIS executable. This will be something like
+
+        ```
+        C:\Program Files\QGIS 2.18\bin
+        ```
 
 ## Launching pymscrape
 1. Open the terminal (UNIX) or Anaconda Powershell Prompt (Windows 10).
