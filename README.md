@@ -131,7 +131,12 @@ older versions of Windows.)
 
         where `<path-to-miniconda>` is the full path to miniconda. It will usually be something like `C:\Users\<username>`, where `<username>` is your Windows 10 username.
 1. Download and install [Inkscape v. 1.1](https://inkscape.org/release/inkscape-1.1/) for your system.
-1. Download and install [QGIS v. 2.18.17](https://www.qgis.org/en/site/forusers/alldownloads.html) for you system.
+1. Download and install [QGIS v. 2.18.17](https://www.qgis.org/en/site/forusers/alldownloads.html) for your system.
+1. Depending on your system, you may also need to add the Inkscape and QGIS executables
+to you path environment. 
+    1. On Windows 10, this can be accomplished by typing "environment"
+    into the Windows search bar, then clicking the "Edit the system environment variables"
+    result that appears.
 
 ## Launching pymscrape
 1. Open the terminal (UNIX) or Anaconda Powershell Prompt (Windows 10).
